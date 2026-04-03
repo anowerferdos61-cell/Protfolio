@@ -4,53 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anower Ferdos | Home</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-
-<h2 class="logo">Anower</h2>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="education.html">Education</a></li>
-<li><a href="skills.html">Skills</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-
+    <h2 class="logo">Anower</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
 </nav>
 
-
+<!-- HOME SECTION -->
 <section class="home">
-
-<a href="https://www.instagram.com/anower_ferdos/" target="_blank">
-<img src="IMG_2143.JPG" class="profile">
-</a>
-
-<h1>Anower Ferdos</h1>
-
-<p>Chemistry Student • Future Software Engineer</p>
-
+    <a href="https://www.instagram.com/anower_ferdos/" target="_blank">
+        <img src="IMG_2143.JPG" class="profile" alt="Anower Ferdos">
+    </a>
+    <h1>Anower Ferdos</h1>
+    <p>🧪 Chemistry Student • 💻 Future Software Engineer</p>
 </section>
 
+<!-- PROJECTS SECTION -->
 <section id="projects" class="projects">
     <h2>Featured Projects</h2>
     <div class="project-grid">
         <div class="project-card">
-            <h3>Periodic Table App</h3>
-            <p>An interactive tool for chemistry students.</p>
+            <h3>📊 Periodic Table App</h3>
+            <p>An interactive tool for chemistry students to explore elements and their properties.</p>
+            <div class="tech">Python • Chemistry</div>
+            <div class="links">
+                <a href="#" target="_blank">View</a>
+                <a href="#" target="_blank">Code</a>
+            </div>
         </div>
+        
         <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>Built with HTML, CSS, and JS.</p>
+            <h3>🌐 Portfolio Website</h3>
+            <p>A fully responsive and animated personal portfolio website.</p>
+            <div class="tech">HTML • CSS • JavaScript</div>
+            <div class="links">
+                <a href="#" target="_blank">View</a>
+                <a href="#" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>🔧 DSA Solutions</h3>
+            <p>Comprehensive Data Structures and Algorithms solutions and explanations.</p>
+            <div class="tech">C++ • Competitive Programming</div>
+            <div class="links">
+                <a href="#" target="_blank">View</a>
+                <a href="#" target="_blank">Code</a>
+            </div>
         </div>
     </div>
+    
+    <!-- ADD NEW PROJECT BUTTON -->
+    <button class="add-project-btn" onclick="addNewProject()">+ Add New Project</button>
 </section>
+
+<script>
+function addNewProject() {
+    const projectName = prompt("Enter project name:");
+    if (!projectName) return;
+    
+    const projectDesc = prompt("Enter project description:");
+    if (!projectDesc) return;
+    
+    const projectTech = prompt("Enter technologies used:");
+    if (!projectTech) return;
+    
+    const newCard = document.createElement('div');
+    newCard.className = 'project-card';
+    newCard.innerHTML = `
+        <h3>✨ ${projectName}</h3>
+        <p>${projectDesc}</p>
+        <div class="tech">${projectTech}</div>
+        <div class="links">
+            <a href="#" target="_blank">View</a>
+            <a href="#" target="_blank">Code</a>
+        </div>
+    `;
+    
+    document.querySelector('.project-grid').appendChild(newCard);
+    alert("Project added successfully!");
+}
+</script>
 
 </body>
 </html>
